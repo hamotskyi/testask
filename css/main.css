@@ -1,0 +1,30 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+  width: 600px;
+  height: 80px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: 0;
+}
+
+header h1 {
+  width: 600px;
+  font-size: 20pt;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=main.css.map */
