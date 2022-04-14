@@ -1,5 +1,6 @@
 * {
     font-family: 'Courier New', Courier, monospace;
+    user-select: none;
 }
 
 header {
@@ -7,7 +8,7 @@ header {
     width: 600px;
     height: 80px;
     position: absolute;
-    top: 25px;
+    //top: 15px;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
@@ -21,6 +22,34 @@ header {
         transform: translateY(-50%);
         margin: 0;
         text-align: center;
-        user-select: none;
+    }
+}
+
+#mainWrapper {
+    //background-color: aqua;
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    #titlesWrapper, #descriptionWrapper {
+        //width: 330px;
+        //height: 420xpx;
+        //background-color: coral;
+        border: 1px solid rgb(151, 151, 151);
+    }
+
+    #listBankSettings {
+        height: 90%;
+        list-style: none;
+        padding: 0;
+        margin: 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     }
 }
