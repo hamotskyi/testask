@@ -4,17 +4,14 @@
 }
 
 header {
-    //background-color: blue;
     width: 600px;
     height: 80px;
     position: absolute;
-    //top: 15px;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
 
     h1 {
-        //background-color: yellow;
         width: 600px;
         font-size: 20pt;
         position: absolute;
@@ -42,14 +39,50 @@ header {
         //height: 420xpx;
         //background-color: coral;
         border: 1px solid rgb(151, 151, 151);
+        padding: 10px;
+        gap: 10px;
     }
 
-    #listBankSettings {
-        height: 90%;
-        list-style: none;
-        padding: 0;
-        margin: 10px;
+    #titlesWrapper {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        #addNewBank {
+            //background-color: pink;
+            border: 1px solid rgb(151, 151, 151);
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+
+
+    #listBankSettings {
+        height: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        #divCalculateMortgage {
+            display: none;
+        }
+
+        #divSubmit {
+            border: 1px solid rgb(151, 151, 151);
+            height: 100%;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .liGrid {
+            display: grid;
+            grid-template-rows: 1fr 1fr;            
+            align-items: center;
+        }
     }
 }

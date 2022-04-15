@@ -44,16 +44,63 @@ header h1 {
 
 #mainWrapper #titlesWrapper, #mainWrapper #descriptionWrapper {
   border: 1px solid #979797;
+  padding: 10px;
+  gap: 10px;
+}
+
+#mainWrapper #titlesWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#mainWrapper #titlesWrapper #addNewBank {
+  border: 1px solid #979797;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
 }
 
 #mainWrapper #listBankSettings {
-  height: 90%;
+  height: 100%;
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 10px;
+  display: none;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#mainWrapper #listBankSettings #divCalculateMortgage {
+  display: none;
+}
+
+#mainWrapper #listBankSettings #divSubmit {
+  border: 1px solid #979797;
+  height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+#mainWrapper #listBankSettings .liGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */
