@@ -70,6 +70,21 @@ header {
             display: none;
         }
 
+        #liSubmitCancel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        #divCancel {
+            border: 1px solid rgb(151, 151, 151);
+            height: 100%;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
         #divSubmit {
             border: 1px solid rgb(151, 151, 151);
             height: 100%;

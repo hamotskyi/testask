@@ -81,6 +81,27 @@ header h1 {
   display: none;
 }
 
+#mainWrapper #listBankSettings #liSubmitCancel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#mainWrapper #listBankSettings #divCancel {
+  border: 1px solid #979797;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
 #mainWrapper #listBankSettings #divSubmit {
   border: 1px solid #979797;
   height: 100%;
