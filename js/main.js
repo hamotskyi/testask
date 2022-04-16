@@ -16,6 +16,11 @@ let divNearLoanTerm = document.getElementById('divNearLoanTerm');
 let divSubmit = document.getElementById('divSubmit');
 let divCalculateMortgage = document.getElementById('divCalculateMortgage');
 
+//// TO DO LIST:
+// - submit button
+// - delete button
+// - bank info buttons
+// - mortgage calculator
 
 
 class Bank {
