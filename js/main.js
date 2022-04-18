@@ -1,5 +1,5 @@
 let bankList = [];
-let quantityOfBankDiv = 0;
+let quantityOfBankDivs = 0;
 let titlesWrap = document.getElementById('titlesWrapper');
 let descriptionWrap = document.getElementById('descriptionWrapper');
 let listBankSettings = document.getElementById('listBankSettings');
@@ -17,7 +17,6 @@ let divSubmit = document.getElementById('divSubmit');
 let divCalculateMortgage = document.getElementById('divCalculateMortgage');
 
 //// TO DO LIST:
-// - submit button
 // - delete button
 // - bank info buttons
 // - mortgage calculator
@@ -76,16 +75,16 @@ function createNewBank() {
 function cancelButton() {
 
     // create "add new bank" button
-    let div = document.createElement("div");
-    let attId = document.createAttribute("id");
-    let attOnclick = document.createAttribute('onclick')
+    let addNewBankDiv = document.createElement("div");
+    let attIdForAddNewBank = document.createAttribute("id");
+    let attOnclickForAddNewBank = document.createAttribute('onclick')
     let textAddNewBank = document.createTextNode("add new bank")
-    attId.value = "addNewBank";
-    attOnclick.value = "createNewBank()"
-    titlesWrap.appendChild(div);
-    div.setAttributeNode(attId);
-    div.setAttributeNode(attOnclick);
-    div.appendChild(textAddNewBank);
+    attIdForAddNewBank.value = "addNewBank";
+    attOnclickForAddNewBank.value = "createNewBank()"
+    titlesWrap.appendChild(addNewBankDiv);
+    addNewBankDiv.setAttributeNode(attIdForAddNewBank);
+    addNewBankDiv.setAttributeNode(attOnclickForAddNewBank);
+    addNewBankDiv.appendChild(textAddNewBank);
 
     // remove all inputs
     let inputBankName = document.getElementById("inputBankName");
@@ -116,27 +115,105 @@ function submit() {
     newBank.loanTerm = document.getElementById("inputLoanTerm").value;
     bankList.push(newBank);
 
+    //console.log(bankList)
 
-    if (quantityOfBankDiv <= 6) {
+    if (quantityOfBankDivs <= 5) {
         
-    } else if (quantityOfBankDiv == 7) {
+        // create new "bank button"
+        let bankDiv = document.createElement("div");
+        let attIdForBankDiv = document.createAttribute("id");
+        let attClassForBankDiv = document.createAttribute("class");
+        //let  = document.createAttribute('onclick');
+        let bankTitle = document.getElementById("inputBankName").value;
+        let bankNameNode = document.createTextNode(bankTitle);
+        attIdForBankDiv.value = index;
+        attClassForBankDiv.value = "bankDiv";
+        //attOnclickForBankDiv = "";
+        titlesWrap.appendChild(bankDiv);
+        bankDiv.setAttributeNode(attIdForBankDiv);
+        bankDiv.setAttributeNode(attClassForBankDiv);
+        //bankDiv.setAttributeNode(attOnclickForBankDiv);
+        bankDiv.appendChild(bankNameNode);
 
+        // create "add new bank" button
+        let addNewBankDiv = document.createElement("div");
+        let attIdForAddNewBank = document.createAttribute("id");
+        let attOnclickForAddNewBank = document.createAttribute('onclick');
+        let textAddNewBank = document.createTextNode("add new bank");
+        attIdForAddNewBank.value = "addNewBank";
+        attOnclickForAddNewBank.value = "createNewBank()"
+        titlesWrap.appendChild(addNewBankDiv);
+        addNewBankDiv.setAttributeNode(attIdForAddNewBank);
+        addNewBankDiv.setAttributeNode(attOnclickForAddNewBank);
+        addNewBankDiv.appendChild(textAddNewBank);
+
+        // remove all inputs
+        let inputBankName = document.getElementById("inputBankName");
+        let inputInterestRate = document.getElementById("inputInterestRate");
+        let inputMaximumLoan = document.getElementById("inputMaximumLoan");
+        let inputMinimumDownPayment = document.getElementById("inputMinimumDownPayment");
+        let inputLoanTerm = document.getElementById("inputLoanTerm");
+        inputBankName.remove();
+        inputInterestRate.remove();
+        inputMaximumLoan.remove();
+        inputMinimumDownPayment.remove();
+        inputLoanTerm.remove();
+
+        //hide field
+        listBankSettings.style.display = "none";
+
+        quantityOfBankDivs++;
+        
+    } else if (quantityOfBankDivs == 6) {
+
+        // create new "bank button"
+        let bankDiv = document.createElement("div");
+        let attIdForBankDiv = document.createAttribute("id");
+        let attClassForBankDiv = document.createAttribute("class");
+        //let  = document.createAttribute('onclick');
+        let bankTitle = document.getElementById("inputBankName").value;
+        let bankNameNode = document.createTextNode(bankTitle);
+        attIdForBankDiv.value = index;
+        attClassForBankDiv.value = "bankDiv";
+        //attOnclickForBankDiv = "";
+        titlesWrap.appendChild(bankDiv);
+        bankDiv.setAttributeNode(attIdForBankDiv);
+        bankDiv.setAttributeNode(attClassForBankDiv);
+        //bankDiv.setAttributeNode(attOnclickForBankDiv);
+        bankDiv.appendChild(bankNameNode);
+        
+        // remove all inputs
+        let inputBankName = document.getElementById("inputBankName");
+        let inputInterestRate = document.getElementById("inputInterestRate");
+        let inputMaximumLoan = document.getElementById("inputMaximumLoan");
+        let inputMinimumDownPayment = document.getElementById("inputMinimumDownPayment");
+        let inputLoanTerm = document.getElementById("inputLoanTerm");
+        inputBankName.remove();
+        inputInterestRate.remove();
+        inputMaximumLoan.remove();
+        inputMinimumDownPayment.remove();
+        inputLoanTerm.remove();
+
+        //hide field
+        listBankSettings.style.display = "none";
+
+        quantityOfBankDivs++;
     }
      
 }
 
-function startLoad() {
+function startLoad() { 
 
-    let div = document.createElement("div");
-    let attId = document.createAttribute("id");
-    let attOnclick = document.createAttribute('onclick')
+    let addNewBankDiv = document.createElement("div");
+    let attIdForAddNewBank = document.createAttribute("id");
+    let attOnclickForAddNewBank = document.createAttribute('onclick')
     let textAddNewBank = document.createTextNode("add new bank")
-    attId.value = "addNewBank";
-    attOnclick.value = "createNewBank()"
-    titlesWrap.appendChild(div);
-    div.setAttributeNode(attId);
-    div.setAttributeNode(attOnclick);
-    div.appendChild(textAddNewBank);
+    attIdForAddNewBank.value = "addNewBank";
+    attOnclickForAddNewBank.value = "createNewBank()"
+    titlesWrap.appendChild(addNewBankDiv);
+    addNewBankDiv.setAttributeNode(attIdForAddNewBank);
+    addNewBankDiv.setAttributeNode(attOnclickForAddNewBank);
+    addNewBankDiv.appendChild(textAddNewBank);
 
 }
 

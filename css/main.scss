@@ -48,7 +48,14 @@ header {
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
         #addNewBank {
-            //background-color: pink;
+            border: 1px solid rgb(151, 151, 151);
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .bankDiv {
             border: 1px solid rgb(151, 151, 151);
             display: grid;
             align-content: center;
