@@ -74,10 +74,28 @@ header {
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 
         #divCalculateMortgage {
-            display: none;
+            border: 1px solid rgb(151, 151, 151);
+            height: 100%;
+            display: grid;
+            align-content: center;
+            text-align: center;
+            // justify-content: center;
+            // justify-items: center;
+            cursor: pointer;
         }
 
-        #liSubmitCancel {
+        #divDelete {
+            border: 1px solid rgb(151, 151, 151);
+            height: 100%;
+            display: grid;
+            align-content: center;
+            text-align: center;
+            // justify-content: center;
+            // justify-items: center;
+            cursor: pointer;
+        }
+
+        .liTwoButtons {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;

@@ -90,10 +90,28 @@ header h1 {
 }
 
 #mainWrapper #listBankSettings #divCalculateMortgage {
-  display: none;
+  border: 1px solid #979797;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  cursor: pointer;
 }
 
-#mainWrapper #listBankSettings #liSubmitCancel {
+#mainWrapper #listBankSettings #divDelete {
+  border: 1px solid #979797;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mainWrapper #listBankSettings .liTwoButtons {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;

@@ -13,12 +13,17 @@ let divMinimumDownPayment = document.getElementById('divMinimumDownPayment');
 let divNearMinimumDownPayment = document.getElementById('divNearMinimumDownPayment');
 let divLoanTerm = document.getElementById('divLoanTerm');
 let divNearLoanTerm = document.getElementById('divNearLoanTerm');
+let liCancelSubmit = document.getElementById('liCancelSubmit');
+let liDeleteCalculate = document.getElementById('liDeleteCalculate');
 let divSubmit = document.getElementById('divSubmit');
 let divCalculateMortgage = document.getElementById('divCalculateMortgage');
+let divDelete = document.getElementById('divDelete');
+let divCancel = document.getElementById('divCancel');
 
 //// TO DO LIST:
 // - delete button
 // - bank info buttons
+// - flag for add new bank
 // - mortgage calculator
 
 
@@ -55,6 +60,12 @@ function createNewBank() {
     idForInputMinimumDownPayment.value = "inputMinimumDownPayment";
     idForInputLoanTerm.value = "inputLoanTerm";
 
+    divNearBankName.innerHTML = "";
+    divNearInterestRate.innerHTML = "";
+    divNearMaximumLoan.innerHTML = "";
+    divNearMinimumDownPayment.innerHTML = "";
+    divNearLoanTerm.innerHTML = "";
+    
     divNearBankName.appendChild(inputBankName);
     divNearInterestRate.appendChild(inputInterestRate);
     divNearMaximumLoan.appendChild(inputMaximumLoan);
@@ -68,6 +79,9 @@ function createNewBank() {
     inputLoanTerm.setAttributeNode(idForInputLoanTerm);
 
     listBankSettings.style.display = "grid";
+    liDeleteCalculate.style.display = "none";
+    liCancelSubmit.style.display = "grid";
+
     addNewBank.remove();
 
 }
@@ -123,16 +137,16 @@ function submit() {
         let bankDiv = document.createElement("div");
         let attIdForBankDiv = document.createAttribute("id");
         let attClassForBankDiv = document.createAttribute("class");
-        //let  = document.createAttribute('onclick');
+        let attOnclickForBankDiv  = document.createAttribute('onclick');
         let bankTitle = document.getElementById("inputBankName").value;
         let bankNameNode = document.createTextNode(bankTitle);
         attIdForBankDiv.value = index;
         attClassForBankDiv.value = "bankDiv";
-        //attOnclickForBankDiv = "";
+        attOnclickForBankDiv.value = "showBankInfo(this)";
         titlesWrap.appendChild(bankDiv);
         bankDiv.setAttributeNode(attIdForBankDiv);
         bankDiv.setAttributeNode(attClassForBankDiv);
-        //bankDiv.setAttributeNode(attOnclickForBankDiv);
+        bankDiv.setAttributeNode(attOnclickForBankDiv);
         bankDiv.appendChild(bankNameNode);
 
         // create "add new bank" button
@@ -170,16 +184,16 @@ function submit() {
         let bankDiv = document.createElement("div");
         let attIdForBankDiv = document.createAttribute("id");
         let attClassForBankDiv = document.createAttribute("class");
-        //let  = document.createAttribute('onclick');
+        let attOnclickForBankDiv = document.createAttribute('onclick');
         let bankTitle = document.getElementById("inputBankName").value;
         let bankNameNode = document.createTextNode(bankTitle);
         attIdForBankDiv.value = index;
         attClassForBankDiv.value = "bankDiv";
-        //attOnclickForBankDiv = "";
+        attOnclickForBankDiv.value = "showBankInfo(this)";
         titlesWrap.appendChild(bankDiv);
         bankDiv.setAttributeNode(attIdForBankDiv);
         bankDiv.setAttributeNode(attClassForBankDiv);
-        //bankDiv.setAttributeNode(attOnclickForBankDiv);
+        bankDiv.setAttributeNode(attOnclickForBankDiv);
         bankDiv.appendChild(bankNameNode);
         
         // remove all inputs
@@ -200,6 +214,34 @@ function submit() {
         quantityOfBankDivs++;
     }
      
+}
+
+function showBankInfo(x) {
+
+    let index = x.id;
+    let bankObj = bankList[index];
+    let bankName = document.createTextNode(bankObj.title);
+    let bankInterestRate = document.createTextNode(bankObj.interestRate);
+    let bankMaxLoan = document.createTextNode(bankObj.maxLoan);
+    let bankMinDownPayment = document.createTextNode(bankObj.minDownPayment);
+    let bankLoanTerm = document.createTextNode(bankObj.loanTerm);
+
+    divNearBankName.innerHTML = "";
+    divNearInterestRate.innerHTML = "";
+    divNearMaximumLoan.innerHTML = "";
+    divNearMinimumDownPayment.innerHTML = "";
+    divNearLoanTerm.innerHTML = "";
+
+    divNearBankName.appendChild(bankName);
+    divNearInterestRate.appendChild(bankInterestRate);
+    divNearMaximumLoan.appendChild(bankMaxLoan);
+    divNearMinimumDownPayment.appendChild(bankMinDownPayment);
+    divNearLoanTerm.appendChild(bankLoanTerm);
+
+    listBankSettings.style.display = "grid";
+    liDeleteCalculate.style.display = "grid";
+    liCancelSubmit.style.display = "none";
+
 }
 
 function startLoad() { 
