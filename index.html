@@ -68,15 +68,18 @@
                     </div>
                 </li>
                 <li class="liTwoButtons" id="liDeleteCalculate">
-                    <div id="divDelete">
+                    <div id="divDelete" onclick="deleteBank(this)">
                         delete<br/>bank
                     </div>
-                    <div id="divCalculateMortgage">
+                    <div id="divCalculateMortgage" onclick="goToCalculator(this)">
                         calculate<br/>mortgage
                     </div>
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div id="wrapperForCalculator">
 
     </div>
     <script src="./js/main.js"></script>
