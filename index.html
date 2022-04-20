@@ -53,7 +53,7 @@
                 </li>
                 <li class="liGrid">
                     <div id="divLoanTerm">
-                        loan term
+                        maximum loan term
                     </div>
                     <div id="divNearLoanTerm">
 
@@ -81,6 +81,76 @@
 
     <div id="wrapperForCalculator">
 
+        <div id="goBackButton" onclick="backToBankList()">
+            back to bank list
+        </div>
+
+        <div id="calculator">
+            <div id="leftSideOfCalculator">
+                
+                <div class="divGridForTwo">
+                    <div>
+                        amount of borrow  
+                    </div>
+                    <div>
+                        <input id="inputAmountOfBorrow" type="text"> $
+                    </div>
+                </div>
+
+                <div class="divGridForTwo">
+                    <div>
+                        loan term
+                    </div>
+                    <div>
+                        <input id="inputTermOfLoan" type="text"> months
+                    </div>
+                </div>
+
+                <div id="calculateButton" onclick="calculateMortgage(this)">
+                    calculate
+                </div>
+            </div>
+            <div id="rightSideOfCalculator">
+
+                <div id="hiden">
+                    <div class="divGridForTwo">
+                        <div>
+                            bank name
+                        </div>
+                        <div id="bankNameInsert">
+
+                        </div>
+                    </div>
+                    
+                    <div class="divGridForTwo">
+                        <div>
+                            down payment
+                        </div>
+                        <div id="downPaymentInsert">
+
+                        </div>
+                    </div>
+
+                    <div class="divGridForTwo">
+                        <div>
+                            monthly payment
+                        </div>
+                        <div id="monthlyPaymentInsert">
+
+                        </div>
+                    </div>
+
+                    <div class="divGridForTwo">
+                        <div>
+                            loan term
+                        </div>
+                        <div id="loanTermInsert">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/main.js"></script>
 </body>
